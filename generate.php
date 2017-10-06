@@ -14,11 +14,13 @@ $payload = [
     'nbf'=>$now,
     'exp'=>($now + 3600),
     'data'=>[
-        'isAdmin'=>false,
-        'username'=>'admin',
+        'name'=>'Test User',
         'email'=>'admin@ataama.com',
+        'phone'=>'7028866912',
+        'timezone'=>'America/Los_Angeles',
         'password'=> password_hash('password', PASSWORD_DEFAULT)
     ]
+    
 ];
 
 $token = JWT::encode($payload, $privateKey, 'RS256');
